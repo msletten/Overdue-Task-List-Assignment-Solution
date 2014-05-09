@@ -11,7 +11,7 @@
 #import "MSAddTaskViewController.h"
 #import "MSDetailTaskViewController.h"
 
-@interface MSViewController : UIViewController <MSAddTaskViewControllerDelegate, UITableViewDelegate, UITableViewDataSource>
+@interface MSViewController : UIViewController <MSAddTaskViewControllerDelegate,  UITableViewDelegate, UITableViewDataSource, MSDetailTaskViewControllerDelegate>
 
 @property (strong, nonatomic) IBOutlet UITableView *taskTableView;
 @property (strong, nonatomic) NSMutableArray *MSTaskObjects;

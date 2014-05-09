@@ -10,9 +10,17 @@
 #import "MSTaskObject.h"
 #import "MSEditTaskViewController.h"
 
-@interface MSDetailTaskViewController : UIViewController
+@protocol MSDetailTaskViewControllerDelegate <NSObject>
 
+-(void)displayTaskUpdate;
+
+@end
+
+@interface MSDetailTaskViewController : UIViewController <MSEditTaskViewControllerDelegate>
+
+@property (weak, nonatomic) id <MSDetailTaskViewControllerDelegate> detailTaskDelegate;
 @property (strong, nonatomic) MSTaskObject *taskDetailObject;
+
 
 @property (strong, nonatomic) IBOutlet UILabel *taskTitleLabel;
 @property (strong, nonatomic) IBOutlet UILabel *taskDateLabel;

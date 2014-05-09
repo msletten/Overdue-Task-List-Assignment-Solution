@@ -27,6 +27,9 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    self.addTaskDetailText.delegate = self;
+    self.addTaskTitleTextField.delegate = self;
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -56,4 +59,23 @@
     
     return addTask;
 }
+
+#pragma mark - UITextFieldDelegate
+-(BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [self.addTaskTitleTextField resignFirstResponder];
+    return YES;
+}
+
+#pragma mark - UITextViewDelegate
+-(BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text
+{
+    if ([text isEqualToString:@"\n"])
+    {
+        [self.addTaskDetailText resignFirstResponder];
+        return NO;
+    }
+    return YES;
+}
+
 @end

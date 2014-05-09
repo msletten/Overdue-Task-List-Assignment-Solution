@@ -43,6 +43,7 @@
     {
         MSEditTaskViewController *editTaskVC = segue.destinationViewController;
         editTaskVC.editTaskObject = self.taskDetailObject;
+        editTaskVC.editTaskDelegate = self;
     }
 }
 
@@ -55,5 +56,20 @@
 - (IBAction)editTaskButtonPressed:(UIBarButtonItem *)sender
 {
     [self performSegueWithIdentifier:@"toEditTaskVCSegue" sender:nil];
+}
+
+//Below: After conforming to the edit task delegate, we implement that delegate's method. Then we call the detail delegate's method on that to save the update from the edit vc to the detail vc.
+-(void)didSaveUpdate
+{
+    self.taskTitleLabel.text = self.taskDetailObject.taskTitle;
+    self.taskDetailLabel.text = self.taskDetailObject.taskDescription;
+    NSDateFormatter *saveUpdateDateFormatter = [[NSDateFormatter alloc] init];
+    [saveUpdateDateFormatter setDateFormat:@"yyyy-MM-dd"];
+    NSString *updateTaskDate = [saveUpdateDateFormatter stringFromDate:self.taskDetailObject.taskDate];
+    self.taskDateLabel.text = updateTaskDate;
+    
+    [self.navigationController popViewControllerAnimated:YES];
+    
+    [self.detailTaskDelegate displayTaskUpdate];
 }
 @end

@@ -9,8 +9,16 @@
 #import <UIKit/UIKit.h>
 #import "MSTaskObject.h"
 
-@interface MSEditTaskViewController : UIViewController <UITextViewDelegate>
+@protocol MSEditTaskViewControllerDelegate <NSObject>
 
+
+-(void)didSaveUpdate;
+
+@end
+
+@interface MSEditTaskViewController : UIViewController <UITextViewDelegate, UITextFieldDelegate>
+
+@property (weak, nonatomic) id <MSEditTaskViewControllerDelegate> editTaskDelegate;
 @property (strong,nonatomic) MSTaskObject *editTaskObject;
 
 @property (strong, nonatomic) IBOutlet UITextField *editTaskTitleText;

@@ -59,7 +59,9 @@
         NSIndexPath *selectedTaskPath = sender;
         MSTaskObject *selectedTaskObject = self.MSTaskObjects[selectedTaskPath.row];
         detailTaskVC.taskDetailObject = selectedTaskObject;
+        detailTaskVC.detailTaskDelegate = self;
     }
+    
 }
 
 
@@ -91,6 +93,14 @@
     [[NSUserDefaults standardUserDefaults] synchronize];
     
     [self dismissViewControllerAnimated:YES completion:nil];
+    [self.taskTableView reloadData];
+}
+
+#pragma mark - MSDetailViewControllerDelegate
+//Implemented the delegate method below so that saved changes in the EditVC that showed in the DetailVC now show up in the VC. We called the saveMovedTasks method from the helper methods below and had our tableView update with those edited and saved tasks. The save now persists too because we wrote that into the saveMovedTasks method.
+-(void)displayTaskUpdate
+{
+    [self saveMovedTasks];
     [self.taskTableView reloadData];
 }
 
