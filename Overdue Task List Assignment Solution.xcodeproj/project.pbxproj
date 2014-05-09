@@ -21,6 +21,10 @@
 		084D46EA191ABC5500A1D103 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 084D46CC191ABC5500A1D103 /* UIKit.framework */; };
 		084D46F2191ABC5500A1D103 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 084D46F0191ABC5500A1D103 /* InfoPlist.strings */; };
 		084D46F4191ABC5500A1D103 /* Overdue_Task_List_Assignment_SolutionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 084D46F3191ABC5500A1D103 /* Overdue_Task_List_Assignment_SolutionTests.m */; };
+		084D46FF191ABD4C00A1D103 /* MSAddTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 084D46FE191ABD4C00A1D103 /* MSAddTaskViewController.m */; };
+		084D4702191ABD6D00A1D103 /* MSDetailTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 084D4701191ABD6D00A1D103 /* MSDetailTaskViewController.m */; };
+		084D4705191ABD9300A1D103 /* MSEditTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 084D4704191ABD9300A1D103 /* MSEditTaskViewController.m */; };
+		084D4708191AC3E700A1D103 /* MSTaskObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 084D4707191AC3E700A1D103 /* MSTaskObject.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +57,14 @@
 		084D46EF191ABC5500A1D103 /* Overdue Task List Assignment SolutionTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Overdue Task List Assignment SolutionTests-Info.plist"; sourceTree = "<group>"; };
 		084D46F1191ABC5500A1D103 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		084D46F3191ABC5500A1D103 /* Overdue_Task_List_Assignment_SolutionTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Overdue_Task_List_Assignment_SolutionTests.m; sourceTree = "<group>"; };
+		084D46FD191ABD4C00A1D103 /* MSAddTaskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSAddTaskViewController.h; sourceTree = "<group>"; };
+		084D46FE191ABD4C00A1D103 /* MSAddTaskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSAddTaskViewController.m; sourceTree = "<group>"; };
+		084D4700191ABD6D00A1D103 /* MSDetailTaskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSDetailTaskViewController.h; sourceTree = "<group>"; };
+		084D4701191ABD6D00A1D103 /* MSDetailTaskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSDetailTaskViewController.m; sourceTree = "<group>"; };
+		084D4703191ABD9300A1D103 /* MSEditTaskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSEditTaskViewController.h; sourceTree = "<group>"; };
+		084D4704191ABD9300A1D103 /* MSEditTaskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSEditTaskViewController.m; sourceTree = "<group>"; };
+		084D4706191AC3E700A1D103 /* MSTaskObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSTaskObject.h; sourceTree = "<group>"; };
+		084D4707191AC3E700A1D103 /* MSTaskObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSTaskObject.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +129,13 @@
 				084D46DA191ABC5500A1D103 /* Main.storyboard */,
 				084D46DD191ABC5500A1D103 /* MSViewController.h */,
 				084D46DE191ABC5500A1D103 /* MSViewController.m */,
+				084D46FD191ABD4C00A1D103 /* MSAddTaskViewController.h */,
+				084D46FE191ABD4C00A1D103 /* MSAddTaskViewController.m */,
+				084D4700191ABD6D00A1D103 /* MSDetailTaskViewController.h */,
+				084D4701191ABD6D00A1D103 /* MSDetailTaskViewController.m */,
+				084D4703191ABD9300A1D103 /* MSEditTaskViewController.h */,
+				084D4704191ABD9300A1D103 /* MSEditTaskViewController.m */,
+				084D4709191AC3F400A1D103 /* Models */,
 				084D46E0191ABC5500A1D103 /* Images.xcassets */,
 				084D46CF191ABC5500A1D103 /* Supporting Files */,
 			);
@@ -150,6 +169,15 @@
 				084D46F0191ABC5500A1D103 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		084D4709191AC3F400A1D103 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				084D4706191AC3E700A1D103 /* MSTaskObject.h */,
+				084D4707191AC3E700A1D103 /* MSTaskObject.m */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -250,9 +278,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				084D4708191AC3E700A1D103 /* MSTaskObject.m in Sources */,
+				084D4702191ABD6D00A1D103 /* MSDetailTaskViewController.m in Sources */,
+				084D4705191ABD9300A1D103 /* MSEditTaskViewController.m in Sources */,
 				084D46D9191ABC5500A1D103 /* MSAppDelegate.m in Sources */,
 				084D46DF191ABC5500A1D103 /* MSViewController.m in Sources */,
 				084D46D5191ABC5500A1D103 /* main.m in Sources */,
+				084D46FF191ABD4C00A1D103 /* MSAddTaskViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
